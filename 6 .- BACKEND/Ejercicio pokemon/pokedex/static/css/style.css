@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+section form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+section fieldset {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 310px;
+}
+section button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+img {
+  vertical-align: middle;
+}
+article {
+  border: 10px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  background-color: rgba(214, 228, 26, 0.884);
+}
+article header h1 {
+  font-size: 30px;
+}
+
+article header h2 {
+  text-align: center;
+}
+
+dl {
+  width: 100%;
+  overflow: hidden;
+}
+dt {
+  float: left;
+  width: 50%;
+  text-align: center;
+  /* adjust the width; make sure the total of both is 100% */
+  background: rgba(11, 165, 226, 0.7);
+}
+dd {
+  float: left;
+  text-align: center;
+  width: 50%;
+  /* adjust the width; make sure the total of both is 100% */
+  background: rgba(11, 165, 226, 0.7);
+}
+article p {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: blue;
+  font-size: 20px;
+}

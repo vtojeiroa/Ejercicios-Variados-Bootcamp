@@ -1,0 +1,31 @@
+able {
+  margin: 2rem auto;
+  border-collapse: collapse;
+  font-family: sans-serif;
+}
+
+table caption {
+  margin: 1rem;
+}
+
+table tr:first-of-type {
+  background: black;
+  color: white;
+}
+
+table tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+table td,
+table th {
+  padding: 0.25rem;
+}
+
+table td.high {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+table td.low {
+  background: rgba(0, 255, 0, 0.4);
+}

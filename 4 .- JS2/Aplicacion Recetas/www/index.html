@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Recipe Finder</h1>
+
+      <form>
+        <fieldset>
+          <label for="term">Search term:</label>
+          <input type="search" id="term" name="term" />
+        </fieldset>
+        <button>Search</button>
+      </form>
+    </header>
+
+    <section id="results" class="hidden">
+      <h2>Search results</h2>
+      <ul></ul>
+    </section>
+
+    <section id="recipe" class="hidden"></section>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
