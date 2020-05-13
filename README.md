@@ -1,2 +1,2 @@
-# Ejercicios-Variados-Bootcamp
+# Ejercicios Variados Bootcamp
 Ejercicios voluntarios realizados
