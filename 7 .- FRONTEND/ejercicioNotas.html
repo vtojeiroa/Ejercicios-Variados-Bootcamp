@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla de notas</title>
+    <style>
+      /*
+            RECORDAD QUE ESTO ES EL MAL, 
+            ESTO NO DEBERÍA SER ASÍ NI EXISTIR 🌟
+        */
+      .green {
+        color: green;
+      }
+
+      .red {
+        color: red;
+      }
+
+      table,
+      tr,
+      td {
+        border: 2px solid black;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- El area de Vue 👇 -->
+    <div id="app">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre de alumno/a</th>
+            <th>Nota del alumno/a</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="nota in notas" :key="nota.id">
+            <td>
+              {{ nota.name }}
+            </td>
+            <td
+              :class=" { green: nota.nota >= notaMedia, red: nota.nota < notaMedia } "
+            >
+              <!-- Estoy accediendo al valor de "nota" dentro de cada objeto para compararlo
+                    con nota.nota, el primer "nota" es el item que estoy iterando en el bucle for -->
+              {{ nota.nota }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- El script de Vue 👇 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <!-- El objeto de Vue 👇 -->
+    <script>
+      const app = new Vue({
+        //Creando un objeto Vue
+        el: "#app", // Indicando dónde trabajará Vue
+        data() {
+          return {
+            notaMedia: 5,
+            notas: [
+              { name: "Maria", nota: 5 },
+              { name: "Jorge", nota: 8 },
+              { name: "Alejandra", nota: 2 },
+              { name: "Susana", nota: 3 },
+              { name: "Alberto", nota: 7 },
+              { name: "Laura", nota: 10 },
+            ],
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

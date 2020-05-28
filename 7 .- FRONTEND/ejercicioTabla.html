@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Directivas de Vuejs</title>
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+        padding: 0.5rem;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Area de trabajo de VUE-->
+    <div id="app">
+      <table>
+        <tr>
+          <th>Nombre del Alumno</th>
+
+          <th>Estado</th>
+        </tr>
+        <tr v-for="nota in notas" :key="nota.id">
+          <td>{{nota.nombre}}</td>
+
+          <td
+            :class=" {green:nota.estado === 'Aprobado', red:nota.estado ==='Suspenso'}"
+          >
+            {{nota.estado}}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--Script de Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Objeto de Vue-->
+    <script>
+      const app = new Vue({
+        el: "#app", // Lugar donde trabaja Vue
+        data() {
+          // Lugar donde estan las variables de Vue
+          return {
+            notas: [
+              { nombre: "Maria", estado: "Aprobado" },
+              { nombre: "Néstor", estado: "Suspenso" },
+              { nombre: "Alejandra", estado: "Aprobado" },
+              { nombre: "Susana", estado: "Suspenso" },
+              { nombre: "Alberto", estado: "Aprobado" },
+            ],
+          };
+        },
+      });
+    </script>
+  </body>
+</html>
