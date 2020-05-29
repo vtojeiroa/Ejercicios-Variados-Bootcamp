@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Directivas de Vuejs</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Area de trabajo de VUE-->
+    <div id="app">
+      <h1>
+        ¡Bienvenido/a, {{username}}!
+      </h1>
+      <p>
+        Nombre de usuario: <input type="text" v-model="username" />
+        <button><a href="products.html">Entrar</a></button>
+      </p>
+    </div>
+    <!--Script de Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Objeto de Vue-->
+    <script>
+      const app = new Vue({
+        el: "#app", // Lugar donde trabaja Vue
+        data() {
+          // Lugar donde estan las variables de Vue
+          return {
+            username: " ",
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

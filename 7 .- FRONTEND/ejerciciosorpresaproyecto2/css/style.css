@@ -1,0 +1,44 @@
+#app {
+  margin: 20px;
+}
+
+#app h1 {
+  font-size: 30px;
+  padding: 1px;
+}
+
+#app p {
+  font-size: 20px;
+}
+nav a {
+  padding: 5px;
+}
+
+nav a.index {
+  border-right: 1px solid black;
+}
+
+nav a.products {
+  border-left: 1px solid black;
+}
+
+table,
+th,
+tr,
+td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+td img {
+  width: 80px;
+  height: 80px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

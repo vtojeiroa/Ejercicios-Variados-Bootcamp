@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Directivas de Vuejs</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Area de trabajo de VUE-->
+    <div id="app">
+      <header>
+        <nav>
+          <a class="index" href="index.html">INCIO</a>
+          <a class="products" href="products.html">PRODUCTOS (Estás aquí)</a>
+        </nav>
+      </header>
+      <body>
+        <h1>Sección de productos</h1>
+        <p>
+          Carrito: {{counter}}
+        </p>
+        <table>
+          <tr>
+            <th>Nombre del producto</th>
+            <th>Imagen del producto</th>
+            <th>Estado</th>
+            <th>Añadir al carro</th>
+          </tr>
+          <tr v-for="producto in productos" :key="producto.id">
+            <td>{{producto.nombre}}</td>
+            <td>
+              <img :src="producto.imagen" alt="imagen del producto" />
+            </td>
+            <td
+              :class=" {green:producto.estado === 'Disponible', red:producto.estado ==='No disponible'}"
+            >
+              {{producto.estado}}
+            </td>
+            <td><button @click="increase()">Añadir unidad</button></td>
+          </tr>
+        </table>
+      </body>
+    </div>
+    <!--Script de Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Objeto de Vue-->
+    <script>
+      const app = new Vue({
+        el: "#app", // Lugar donde trabaja Vue
+        data() {
+          // Lugar donde estan las variables de Vue
+          return {
+            productos: [
+              {
+                nombre: "Alubias",
+                imagen: "imagenes/alubias.jpeg",
+                estado: "Disponible",
+              },
+              {
+                nombre: "Garbanzos",
+                imagen: "imagenes/garbanzos.jpeg",
+                estado: "No disponible",
+              },
+              {
+                nombre: "Judias verdes",
+                imagen: "imagenes/judias.jpeg",
+                estado: "Disponible",
+              },
+              {
+                nombre: "Remolacha",
+                imagen: "imagenes/remolacha.jpeg",
+                estado: "No disponible",
+              },
+            ],
+            counter: 0,
+          };
+        },
+        //  AQUI VA LA LÓGICA DE VUE
+        methods: {
+          increase() {
+            this.counter++;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
