@@ -7,7 +7,7 @@
         <div
           class="bar"
           :style="{width:playerHp + '%'}"
-          :class="{orange: playerHp<40, red: playerHp<15}"
+          :class="{orange: playerHp<50, red: playerHp<20}"
         >{{playerHp}}</div>
       </div>
       <div class="opponent">
@@ -35,8 +35,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 .hpbars {
   text-align: center;
   color: #cbcdcd;
@@ -53,20 +53,20 @@ export default {
   font-weight: bold;
   background: greenyellow;
   margin: auto;
-  border-radius: 26px;
+  border-radius: 20px;
   height: 40px;
   display: block;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
-  flex-direction: column;
 }
 p {
-  color: turquoise;
+  font-family: "Acme", serif, sans-serif;
   font-size: 2rem;
+  color: turquoise;
   font-weight: bold;
   margin: 2.5rem auto;
-  font-family: "Acme", serif, sans-serif;
   text-shadow: 2px 2px black;
 }
 .player {

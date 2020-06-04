@@ -83,10 +83,17 @@ button {
   font-family: "Roboto", serif, sans-serif;
   font-weight: bolder;
   font-size: 1rem;
-  background: turquoise;
+  background: greenyellow;
+  color: turquoise;
   border-radius: 20px;
   border: 2px solid turquoise;
   width: 200px;
+  height: 100px;
+  text-shadow: 2px 2px black;
+}
+button a {
+  color: turquoise;
+  font-size: 2rem;
 }
 input {
   padding: 0.6rem;

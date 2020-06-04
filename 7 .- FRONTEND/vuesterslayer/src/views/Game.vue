@@ -25,7 +25,7 @@
     <!-- CONTROLES -->
 
     <!-- LOGS -->
-    <logs :logs="logs" v-if="logs.length"></logs>
+    <logs :logs="logs" v-show="logs.length"></logs>
     <!--     <h2>LOGS</h2>
     <p v-for="log in logs" :key="log.id">{{ log.text }}</p>
     -->
@@ -103,7 +103,19 @@ export default {
     heal() {
       //CURAR SOLO PUEDE UTILIZARSE SI EL PLAYER ESTÁ A MENOS DEL 50% DE VIDA.
       //CUANDO EL PLAYER SE CURA, EL ENEMIGO ATACA IGUALMENTE
-      if (this.playerHp < 40 && this.healUses > 0) {
+      if (this.healUses < 1) {
+        Swal.fire({
+          title: "You have no more energy kits",
+          text: "Kepp Fighting!!!!!",
+          confirmButtonText: "Ok"
+        });
+      } else if (this.playerHp > 50 && this.healUses > 0) {
+        Swal.fire({
+          title: "You're still not tired enough",
+          text: "Kepp Fighting!!!!!",
+          confirmButtonText: "Ok"
+        });
+      } else if (this.playerHp < 50 && this.healUses > 0) {
         this.playerHp += this.healHp;
         this.healUses--;
         this.logs.unshift({
@@ -118,7 +130,13 @@ export default {
     },
     specialAttack() {
       //MOVIMIENTO CON LÍMITES DE USO. NÚMERO BAJO.
-      if (this.specialUses > 0) {
+      if (this.specialUses < 1) {
+        Swal.fire({
+          title: "You have no more special Attacks ",
+          text: "Do what you can and Kepp Fighting!!!!!",
+          confirmButtonText: "Ok"
+        });
+      } else if (this.specialUses > 0) {
         let damage = this.calculateDamage(10, 20);
         this.enemyHp -= damage;
         this.specialUses--;
@@ -185,7 +203,7 @@ export default {
       this.playerHp = 0;
       Swal.fire({
         title: "You have tied!!!!",
-        text: "You want to tie??????",
+        text: " It can only by one....You want to do the tiebreak??????",
         confirmButtonText: "Yes, I want!!!!!",
         showCancelButton: true,
         cancelButtonText: "No I'm going to lick my wounds"
